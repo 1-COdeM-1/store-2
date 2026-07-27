@@ -1,4 +1,4 @@
-import { supabase } from '@/lib/supabaseClient';
+
 import { CATEGORIES } from '@/constants';
 import type { Product, Category } from '@/types';
 
@@ -67,80 +67,32 @@ export function normalizeProduct(raw: Record<string, any>): Product {
 // ─── Fetchers (To be wrapped by React Query) ───────────────────────────────
 
 export async function fetchAllProducts(): Promise<Product[]> {
-  const { data, error } = await supabase.from('Products').select('*');
-
-  if (error) {
-    console.error('[fetchAllProducts] Supabase error:', error.message);
-    throw error;
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return ((data ?? []) as Record<string, any>[]).map(normalizeProduct);
+  // TODO: Implement Cloudflare fetch logic
+  return [];
 }
 
-export async function fetchProductById(id: string | number): Promise<Product | null> {
-  const { data, error } = await supabase
-    .from('Products')
-    .select('*')
-    .eq('id', Number(id))
-    .single();
-
-  if (error) {
-    console.error('[fetchProductById] Supabase error:', error.message);
-    throw error;
-  }
-
-  if (!data) return null;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return normalizeProduct(data as Record<string, any>);
+export async function fetchProductById(_id: string | number): Promise<Product | null> {
+  // TODO: Implement Cloudflare fetch logic
+  return null;
 }
 
 export async function addProductToDB(
-  product: Omit<Product, 'id' | 'createdAt'>
+  _product: Omit<Product, 'id' | 'createdAt'>
 ): Promise<Product | null> {
-  const { data, error } = await supabase
-    .from('Products')
-    .insert([product])
-    .select()
-    .single();
-
-  if (error) {
-    console.error('[addProduct] Supabase error:', error.message);
-    throw error;
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return data ? normalizeProduct(data as Record<string, any>) : null;
+  // TODO: Implement Cloudflare fetch logic
+  return null;
 }
 
 export async function updateProductInDB(
-  id: number,
-  updates: Partial<Omit<Product, 'id' | 'createdAt'>>
+  _id: number,
+  _updates: Partial<Omit<Product, 'id' | 'createdAt'>>
 ): Promise<Product | null> {
-  const { data, error } = await supabase
-    .from('Products')
-    .update(updates)
-    .eq('id', id)
-    .select()
-    .single();
-
-  if (error) {
-    console.error('[updateProduct] Supabase error:', error.message);
-    throw error;
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return data ? normalizeProduct(data as Record<string, any>) : null;
+  // TODO: Implement Cloudflare fetch logic
+  return null;
 }
 
-export async function deleteProductFromDB(id: number): Promise<boolean> {
-  const { error } = await supabase.from('Products').delete().eq('id', id);
-
-  if (error) {
-    console.error('[deleteProduct] Supabase error:', error.message);
-    throw error;
-  }
-
+export async function deleteProductFromDB(_id: number): Promise<boolean> {
+  // TODO: Implement Cloudflare fetch logic
   return true;
 }
 

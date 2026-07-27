@@ -18,7 +18,7 @@ import { SORT_OPTIONS } from '@/constants';
 import { cn } from '@/utils/cn';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useRealtimeProducts } from '@/hooks/useRealtimeProducts';
+
 import { CategoryCard } from '@/components/shared/CategoryCard';
 import { Skeleton } from '@/components/ui/skeleton';
 import type { SortOption } from '@/types';
@@ -219,10 +219,7 @@ export function ShopPage() {
     }
   }, [categoryParam, category, setCategory]);
 
-  // Subscribe to live DB changes
-  useRealtimeProducts({
-    enabled: !loading,
-  });
+
 
   const activeFiltersCount = useMemo(() => {
     let count = 0;

@@ -1,3 +1,9 @@
+export interface ProductSize {
+  name: string;
+  originalPrice: number;
+  salePrice: number;
+}
+
 export interface Product {
   id?: number;
   title: string;
@@ -11,6 +17,7 @@ export interface Product {
   featured: boolean;
   image: string;
   images?: string[];
+  sizes?: ProductSize[];
   whatsappNumber: string;
   createdAt?: string;
   rating: number;

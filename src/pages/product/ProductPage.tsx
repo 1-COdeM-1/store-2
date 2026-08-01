@@ -32,6 +32,7 @@ export function ProductPage() {
   const { data: relatedProducts = [] } = useRelatedProducts(id, 4);
 
   const [selectedImage, setSelectedImage] = useState(0);
+  const [selectedSizeIndex, setSelectedSizeIndex] = useState(0);
   // Track which image indices have failed to load (broken Cloudflare URLs, etc.)
   const [imgErrors, setImgErrors] = useState<Set<number>>(new Set());
 
@@ -76,15 +77,23 @@ export function ProductPage() {
     language === 'ar' ? product.categoryAr : product.category;
 
   const inWishlist = isInWishlist(product.id);
-  const discountPercentage = product.discount || 0;
-  const originalPrice = product.price;
-  const sellPrice = discountPercentage > 0 
-    ? originalPrice - (originalPrice * (discountPercentage / 100))
-    : originalPrice;
+
+  const activeSizes = product.sizes && product.sizes.length > 0 ? product.sizes : null;
+  const currentSize = activeSizes ? (activeSizes[selectedSizeIndex] || activeSizes[0]) : null;
+
+  const originalPrice = currentSize ? Number(currentSize.originalPrice) : Number(product.price);
+  const sellPrice = currentSize
+    ? Number(currentSize.salePrice)
+    : product.discount && product.discount > 0
+    ? Number(product.price) - (Number(product.price) * (product.discount / 100))
+    : Number(product.price);
+  const discountPercentage = currentSize && originalPrice > sellPrice
+    ? Math.round(((originalPrice - sellPrice) / originalPrice) * 100)
+    : product.discount || 0;
 
   const whatsappUrl = generateWhatsAppUrl(
     product.whatsappNumber,
-    displayTitle,
+    currentSize ? `${displayTitle} (${currentSize.name})` : displayTitle,
     sellPrice,
     language
   );
@@ -226,6 +235,35 @@ export function ProductPage() {
                 <span className="text-sm text-muted-foreground">
                   {product.rating} ({product.reviews} {t('reviews')})
                 </span>
+              </div>
+            )}
+
+            {/* Size Selection Buttons */}
+            {activeSizes && activeSizes.length > 0 && (
+              <div className="space-y-3 pt-1">
+                <p className="text-sm font-semibold text-foreground">
+                  {language === 'ar' ? 'اختر الحجم:' : 'Select Size:'}
+                </p>
+                <div className="flex flex-wrap gap-2.5">
+                  {activeSizes.map((size, idx) => {
+                    const isSelected = selectedSizeIndex === idx;
+                    return (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setSelectedSizeIndex(idx)}
+                        className={cn(
+                          'px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 border shadow-sm',
+                          isSelected
+                            ? 'bg-primary text-primary-foreground border-primary shadow-md scale-105'
+                            : 'bg-background hover:bg-muted text-foreground border-border'
+                        )}
+                      >
+                        {size.name}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             )}
 

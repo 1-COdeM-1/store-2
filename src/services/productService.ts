@@ -61,6 +61,17 @@ export function normalizeProduct(raw: Record<string, any>): Product {
     }
   }
 
+  let sizesArray: any[] = [];
+  if (Array.isArray(raw.sizes)) {
+    sizesArray = raw.sizes;
+  } else if (typeof raw.sizes === 'string') {
+    try {
+      sizesArray = JSON.parse(raw.sizes);
+    } catch {
+      sizesArray = [];
+    }
+  }
+
   return {
     id:              raw.id != null ? Number(raw.id) : undefined,
     title:           raw.title           ?? raw.Title          ?? '',
@@ -74,6 +85,7 @@ export function normalizeProduct(raw: Record<string, any>): Product {
     featured:        Boolean(raw.featured ?? raw.Featured ?? false),
     image:           imagesArray[0]      ?? raw.image          ?? '',
     images:          imagesArray.length  ? imagesArray         : undefined,
+    sizes:           sizesArray.length   ? sizesArray          : undefined,
     whatsappNumber:  raw.whatsappNumber  ?? raw.whatsNumber    ?? raw.whatsapp_number ?? raw.whats_number ?? raw.phone ?? '',
     createdAt:       raw.createdAt       ?? raw.created_at     ?? undefined,
     rating:          Number(raw.rating   ?? raw.Rating         ?? 0),

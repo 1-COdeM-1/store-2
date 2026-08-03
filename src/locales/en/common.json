@@ -1,28 +1,28 @@
 {
-  "appName": "chicken spicy",
-  "tagline": "The Best Chicken in Town",
+  "appName": "TrioPizza",
+  "tagline": "Finest Seafood Pizza in Town",
   "search": "Search",
-  "searchPlaceholder": "Search products...",
+  "searchPlaceholder": "Search our menu...",
   "categories": "Categories",
   "products": "Products",
   "featured": "Featured",
-  "newArrivals": "New Arrivals",
+  "newArrivals": "New on Menu",
   "viewAll": "View All",
-  "shopNow": "Shop Now",
+  "shopNow": "Order Now",
   "viewDetails": "View Details",
   "addToWishlist": "Add to Wishlist",
   "removeFromWishlist": "Remove from Wishlist",
   "shareOnWhatsApp": "Share on WhatsApp",
-  "callSeller": "Call Seller",
-  "buyNow": "Buy Now",
+  "callSeller": "Call Us",
+  "buyNow": "Order Now",
   "price": "Price",
   "discount": "Discount",
   "originalPrice": "Original Price",
   "category": "Category",
   "rating": "Rating",
   "reviews": "Reviews",
-  "inStock": "In Stock",
-  "outOfStock": "Out of Stock",
+  "inStock": "Available",
+  "outOfStock": "Not Available",
   "sortBy": "Sort By",
   "filter": "Filter",
   "filters": "Filters",
@@ -40,7 +40,7 @@
   "noResultsDescription": "Try adjusting your search or filters",
   "back": "Back",
   "home": "Home",
-  "shop": "Shop",
+  "shop": "Menu",
   "wishlist": "Wishlist",
   "about": "About",
   "contactUs": "Contact Us",
@@ -69,52 +69,51 @@
     "arabic": "العربية"
   },
   "hero": {
-    "headline": "Delicious Crispy Chicken",
-    "description": "Enjoy our mouth-watering, perfectly seasoned fried chicken and delicious meals. Fast delivery and fresh ingredients guaranteed!",
+    "headline": "Fire-Oven Seafood Pizza",
+    "description": "Indulge in our hand-crafted seafood pizzas, loaded with fresh shrimp, grilled chicken, and our signature creamy sauce — baked to golden perfection in a fire oven.",
     "ctaShop": "Order Now",
     "ctaCategories": "View Menu"
   },
   "shopByCategory": {
-    "title": "Shop by Category",
-    "description": "Browse our wide range of categories"
+    "title": "Explore Our Menu",
+    "description": "Browse our handcrafted seafood pizza categories and signature creations"
   },
   "featuredProducts": {
-    "title": "Featured Products",
-    "description": "Handpicked items just for you"
+    "title": "Our Signature Pizzas",
+    "description": "Our most-loved seafood masterpieces, crafted fresh every day"
   },
   "about": {
-    "title": "About Us",
+    "title": "About TrioPizza",
     "ourStory": "Our Story",
     "mission": "Our Mission",
     "vision": "Our Vision",
-    "values": "Our Values",
-    "storyText": "Founded in 2020, CrispyBites began with a simple mission: to bring the best tasting fried chicken to food lovers everywhere. What started as a small kitchen has grown into a beloved destination for delicious meals.",
-    "missionText": "We strive to provide an exceptional dining experience by serving high-quality, freshly prepared chicken with our secret blend of spices.",
-    "visionText": "To become the most loved chicken restaurant, where great taste meets convenience, and every meal brings joy.",
-    "quality": "Quality First",
-    "customerFocus": "Customer Focus",
-    "integrity": "Integrity",
-    "innovation": "Innovation",
-    "qualityDesc": "We never compromise on food quality. Every meal is prepared fresh with the finest ingredients.",
-    "customerFocusDesc": "Our customers are at the heart of everything we do.",
-    "integrityDesc": "We operate with transparency and honesty in all our dealings.",
-    "innovationDesc": "We continuously seek new recipes and flavors to improve your dining experience."
+    "values": "Why TrioPizza?",
+    "storyText": "Founded in 2018, TrioPizza was born from a passion for bold flavors and the finest seafood. We set out to create the ultimate pizza experience — combining the richness of the sea with the warmth of a fire oven. Today, we are proud to be the go-to destination for seafood pizza lovers across the city.",
+    "missionText": "Our mission is simple: to craft extraordinary pizzas using the freshest seafood, premium ingredients, and our signature fire-oven technique — delivering an unforgettable dining experience with every single slice.",
+    "visionText": "To be the most celebrated seafood pizza restaurant, where every visit feels special, every bite tells a story, and every guest leaves with a craving to return.",
+    "quality": "Fire-Oven Crafted",
+    "customerFocus": "Fresh Seafood Daily",
+    "integrity": "Honest Ingredients",
+    "innovation": "Bold Flavors",
+    "qualityDesc": "Every pizza is baked in our traditional fire oven, giving it that signature golden crust and smoky depth that sets us apart.",
+    "customerFocusDesc": "We source only the freshest shrimp, fish, and seafood daily — because great pizza starts with great ingredients.",
+    "integrityDesc": "No shortcuts, no compromises. Every ingredient on our menu is carefully selected and honestly prepared.",
+    "innovationDesc": "We constantly innovate our recipes and sauces, pushing the boundaries of what a seafood pizza can be."
   },
-
   "wishlist": {
     "title": "My Wishlist",
     "empty": "Your wishlist is empty",
-    "emptyDescription": "Browse our products and add items you love to your wishlist",
+    "emptyDescription": "Browse our menu and save your favorite pizzas to your wishlist",
     "remove": "Remove",
     "added": "Added to wishlist",
     "removed": "Removed from wishlist"
   },
   "product": {
-    "relatedProducts": "Related Products",
+    "relatedProducts": "You May Also Love",
     "breadcrumb": {
       "home": "Home",
-      "shop": "Shop",
-      "product": "Product"
+      "shop": "Menu",
+      "product": "Pizza"
     }
   },
   "error": {
@@ -130,11 +129,11 @@
     }
   },
   "footer": {
-    "description": "Your favorite destination for mouth-watering chicken meals. We serve the crispiest, most delicious food in town.",
+    "description": "TrioPizza — your destination for the finest fire-oven seafood pizza. Made fresh, baked golden, delivered fast.",
     "customerService": "Customer Service",
     "faq": "FAQ",
-    "shipping": "Shipping Info",
-    "returns": "Returns & Exchanges",
+    "shipping": "Delivery Info",
+    "returns": "Returns & Refunds",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
   }

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
-  ShoppingBag,
+  Pizza,
   Phone,
   MapPin,
   Facebook,
@@ -29,7 +29,7 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center gap-2.5 group">
               <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-                <ShoppingBag className="w-5 h-5 text-primary-foreground" />
+                <Pizza className="w-5 h-5 text-primary-foreground" />
               </div>
               <span className="text-xl font-bold text-foreground tracking-tight">
                 {t('appName')}

@@ -7,7 +7,7 @@ import {
   Sun,
   Moon,
   Heart,
-  ShoppingBag,
+  Pizza,
 } from 'lucide-react';
 import { useThemeStore } from '@/store/themeStore';
 import { useLanguageStore } from '@/store/languageStore';
@@ -71,10 +71,10 @@ export function Navbar() {
             <Link
               to="/"
               className="flex items-center gap-2.5 shrink-0 group"
-              aria-label="LuxeMarket Home"
+              aria-label="TrioPizza Home"
             >
               <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-                <ShoppingBag className="w-5 h-5 text-primary-foreground" />
+                <Pizza className="w-5 h-5 text-primary-foreground" />
               </div>
               <span className="text-xl font-bold text-foreground tracking-tight">
                 {t('appName')}

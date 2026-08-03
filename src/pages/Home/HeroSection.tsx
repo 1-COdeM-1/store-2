@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight, ChevronDown, Star, Clock, Flame } from 'lucide-react';
+import { ArrowRight, ChevronDown, Star, Fish, Flame } from 'lucide-react';
 import { useLanguageStore } from '@/store/languageStore';
 import { cn } from '@/utils/cn';
 import { Button } from '@/components/ui/button';
@@ -138,9 +138,9 @@ export function HeroSection() {
                 style={{ animationDelay: '220ms', opacity: 0 }}
               >
                 {[
+                  { icon: Flame, label: language === 'ar' ? 'فرن الحطب' : 'Fire Oven' },
+                  { icon: Fish, label: language === 'ar' ? 'مأكولات بحرية طازجة' : 'Fresh Seafood' },
                   { icon: Star, label: language === 'ar' ? '٤.٩ تقييم' : '4.9 Rating' },
-                  { icon: Clock, label: language === 'ar' ? 'توصيل سريع' : 'Fast Delivery' },
-                  { icon: Flame, label: language === 'ar' ? 'طازج دائماً' : 'Always Fresh' },
                 ].map(({ icon: Icon, label }) => (
                   <span
                     key={label}
@@ -232,7 +232,7 @@ export function HeroSection() {
                     )}
                   >
                     <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                    {language === 'ar' ? 'متوفر الآن' : 'Available Now'}
+                    {language === 'ar' ? 'متوفر الآن' : 'Order Available'}
                   </span>
 
                   <span
